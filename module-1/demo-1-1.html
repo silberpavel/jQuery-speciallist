@@ -1,0 +1,48 @@
+<!doctype html>
+<html lang="ru">
+	<head>
+		<meta http-equiv="Content-Type" content="text/html; charset=utf-8"/>
+		<title>Начало</title>
+		<link rel="stylesheet" href="../css/style.css" type="text/css" />  
+		<script src="../lib/jquery.js" type="text/javascript"></script>
+		<script>
+			$(function() {
+				// if true => execute
+				if($("p").length) console.log('if check');
+				$("ul li").addClass('myList');
+				$("ul li:odd").removeClass('myList');
+
+
+				
+				$("ul li").toggleClass('myList');
+				
+
+				if($("li:first").is(".myList") )
+					console.log('Yes');
+					
+								
+			});
+		</script>
+		<style>
+			body {font-size: 1.2em}
+
+
+			.myList {
+				color: orange;
+			}
+		</style>
+	</head>
+	<body>
+		<div id='box'>
+			<ul>
+				<li>Первый пункт</li>
+				<li>Второй пункт</li>
+				<li>Третий пункт</li>
+				<li>Четвертый пункт</li>
+			</ul>
+		</div>
+		<script>
+			
+		</script>
+	</body>
+</html>
