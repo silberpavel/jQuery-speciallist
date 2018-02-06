@@ -36,11 +36,23 @@
 			// myInput.css("background", "yellow");
 
 
-			$("select").val("3");
+			// $("select").val("3");
 
-			$("input[type='text']").each(function(idx, el){
-				console.log(idx, $(el).val());
+			// $("input[type='text']").each(function(idx, el){
+			// 	console.log(idx, $(el).val());
+			// });
+
+			$("form").attr("method", "get");	 
+
+			console.log($("form")[0]);	// <form action="demo-2.html" method="get"> 
+			
+			$("form").attr("action", function(idx, val){	// adding callback function
+				return val + "?param" + idx + "=true";
 			});
+
+			var intVal = $("input[type='text").val();
+			console.log(intVal);
+			
 
 		</script>
 	</body>

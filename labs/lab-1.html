@@ -14,6 +14,20 @@
 			и добавьте его в <span> вместо строки "какой-то курс"
 			(третий <p> в <div id="news">)
 	*/
+        $(function(){
+        // ЗАДАНИЕ 1
+        $("table tbody tr:odd").css("background-color", "pink");
+        var txt = $("table#courses tbody td:contains('AJAX')")
+                    .eq(1).text();
+
+        txt = txt.slice(0, txt.indexOf(" (")); // Обрезать от 0 до " ("
+        
+        var p = $("div#content div#news p").not(":has(span.hidden)");
+        p.children("span").text(txt).css("color", "green").css("font-size", "1.3em");
+        
+        });
+
+
 	/** ЗАДАНИЕ 2
 		- В таблице с id="courses" выберите коды всех курсов и для каждого курса 
 			- сформируйте строку вида "код.pdf", например "xml.pdf"
