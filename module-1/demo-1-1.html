@@ -5,25 +5,12 @@
 		<title>Начало</title>
 		<link rel="stylesheet" href="../css/style.css" type="text/css" />  
 		<script src="../lib/jquery.js" type="text/javascript"></script>
-
 		<script>
-
 		</script>
-
-
 		<style>
-			body {
-				font-size: 1.2em;
-				background: grey;
-				}
-
-			.myList {
-				background: rgba(187, 124, 105, 0.474);
-			}
 		</style>
 	</head>
 	<body>
-		<h1>jQuery</h1>
 		<div id='box'>
 			<ul>
 				<li>Первый пункт</li>
@@ -32,47 +19,8 @@
 				<li>Четвертый пункт</li>
 			</ul>
 		</div>
-
-		<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Ipsum, rerum?</p>
 		<script>
-				$(function() {
-				// if true => execute
-				// if($("p").length) console.log('if check');
-				// $("ul li").addClass('myList');
-				// $("ul li:odd").removeClass('myList');
-				// $("ul li").toggleClass('myList');
-				// if($("li:first").is(".myList") )
-				// 	console.log('Yes');
-
-				// $("ul")
-				// 	.children("li")
-				// 	.eq(3)
-				// 	.prev()		//prev()
-				// 	.text("new text")
-				// 	.css("color", 'blue');
-	
-				// });
-
-				// $("li").html(function(idx, txt) {
-				// 	return idx + "-" + txt + "!!!";	
-				// });	
-
-
-				// $("ul li:first").closest("li").css("color", "red");
-
-				var mySelection = $("ul li:first")
-				.next().andSelf();
-
-				mySelection.add("h1")
-				.css("color", "pink")
-				
-				
-
-
-
-
-
-			});
+			
 		</script>
 	</body>
 </html>

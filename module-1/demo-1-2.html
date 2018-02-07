@@ -13,11 +13,9 @@
 	<body>
 		<form action="demo-2.html">
 			<label for="name">Имя</label><br />
-			<input type="text" name="name" id="name" value="John"/><br />
-
+			<input type="text" name="name" id="name"/><br />
 			<label for="email">Email</label><br />
-			<input type="text" name="email" id="email" value="john@mail.ru"/><br />
-
+			<input type="text" name="email" id="email" /><br />
 			<label for="books">Книги</label><br />
 			<select name="books" id="books">
 				<option value="1">AJAX</option>
@@ -31,29 +29,6 @@
 			<input type="submit" value="Отправить" /><br />
 		</form>
 		<script>
-
-			// var myInput = $("input[type='text']").val("hello");
-			// myInput.css("background", "yellow");
-
-
-			// $("select").val("3");
-
-			// $("input[type='text']").each(function(idx, el){
-			// 	console.log(idx, $(el).val());
-			// });
-
-			$("form").attr("method", "get");	 
-
-			console.log($("form")[0]);	// <form action="demo-2.html" method="get"> 
-			
-			$("form").attr("action", function(idx, val){	// adding callback function
-				return val + "?param" + idx + "=true";
-			});
-
-			var intVal = $("input[type='text").val();
-			console.log(intVal);
-			
-
 		</script>
 	</body>
 </html>
