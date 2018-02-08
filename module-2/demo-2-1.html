@@ -5,7 +5,64 @@
 		<title>События</title>
 		<script src="../lib/jquery.js" type="text/javascript"></script>
 		<script>
+			
 			$(function(){
+
+				// function toggle(obj) {
+				// 	obj
+				// 		.siblings("button")
+				// 		.removeAttr("disabled")
+				// 	.end()		// Заканчиваем с текушем объектом
+				// 		.attr("disabled", "disabled");
+				// }
+
+				// $("#hide").on("click", function(){
+				// 	$("#box").hide();
+				// 	// $(this).text("hello");
+				// 	// $(this).attr("disabled", "disabled");
+				// 	// $(this).siblings("button").removeAttr("disabled");
+				// 	toggle($(this));
+				// });
+
+				// $("#show").on("click", function(){
+				// 	$("#box").show();
+				// 	// $(this).text("hello");
+				// 	// $(this).attr("disabled", "disabled");
+				// 	// $(this).siblings("button").removeAttr("disabled");
+				// 	toggle($(this));
+				// });
+
+				
+				$('#box').on("click", function(){
+					// $('#toggle').click();					
+					$('#toggle').trigger("click");
+					$('#toggle').off("click.hello");		// disable trigger	
+									// "click.hello"  Пространство имен				
+				})
+
+
+				$("#toggle").on("click.display", {x:10, y:20}, function(e){
+					console.log(e.data.x, e.data.y);
+
+					var box = $("#box");
+					if(box.is(":visible")) {
+						// box.hide();
+						box.toggle();
+						$(this).text("SHOW");
+					} else {
+						// box.show();
+						box.toggle();						
+						$(this).text("HIDE");
+					}
+				});
+				
+
+
+
+
+
+
+
 			});
 		</script>
 		<style>
@@ -15,9 +72,10 @@
 	</head>
 	<body>
 	<div id="buttons">
-		<button id="hide">Hide</button>
-		<button id="show">Show</button>
-	<div>
+		<!-- <button id="hide">Hide</button> -->
+		<!-- <button id="show">Show</button> -->
+		<button id="toggle">HIDE</button>	
+		<div>
 	<div id="box">
 		<h1>Привет всем!</h1>
 	</div>

@@ -6,6 +6,39 @@
 		<script src="../lib/jquery.js" type="text/javascript"></script>
 		<script>
 			$(function(){
+
+
+				// $("article").append("<h2>Добавили строку</h2>");
+
+				// $("<h2></h2>", {
+				// 	text: "New text",
+				// 	class: "myClass"
+				// }).appendTo("article");
+
+				// $("p").eq(0).after($("h1")); // передвигаем элемент
+
+				// $("span.sp").each(function(){
+				// 	$("<blockquote></blockquote>", {
+				// 		class: "sp",
+				// 		text: $(this).text()
+				// 	}).prependTo($(this).closest("p"));
+				// });
+
+				var h3 = $("h3").map(function(i, obj){
+					return $(obj).text();
+				})
+				console.log(h3);
+				$("ul").html(
+					// $.map() global map
+					$.map(h3, function(obj, i){	
+						return "<li><a href='#"+obj+" '>Раздел "+(i+1)+"</a></li>";
+					}).join("")
+				);
+
+
+
+				// $(":contains('Добавили строку')").css("color", "red");
+
 			});
 		</script>
 		<style>

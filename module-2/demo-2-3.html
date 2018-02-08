@@ -6,6 +6,24 @@
 		<script src="../lib/jquery.js" type="text/javascript"></script>
 		<script>
 			$(function(){
+
+				$("li").on("click", "li", function(){
+					alert($(this).text());
+				})
+
+				$("<li>New</li>").appendTo("ul");
+				var r = $("li").first().replaceWith("<li>!!!</li>")
+				r.appendTo("ul");
+
+
+				// var clones = $("li").clone();
+				// clones.html(function(i, txt){
+				// 	return txt + "!!!";
+				// })
+
+				// $("ul").append(clones);
+
+
 			});
 		</script>
 		<style>
