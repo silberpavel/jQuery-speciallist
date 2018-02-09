@@ -14,6 +14,39 @@
 		- Результат должен быть следующим:
 			<span id="complex">Радио, Бауманский, Стилобат</span>
 	*/
+
+      $(function() {
+
+// UNIQUE ELEMENTS FILTER
+        var tr = $("table tbody tr");
+        var compexes = tr.map(function(i, obj) {
+          return $(obj).children().eq(3).text();
+        });
+        function unique(arr) {
+          var tmp = [];
+          for(var i=0; i<arr.length; i++){
+            if(tmp.indexOf(arr[i]) == -1) {
+              tmp.push(arr[i]);
+            }
+          }
+          return tmp;
+        }
+
+        compexes = unique(compexes);
+        // add text <- array ???
+        $("span#complex").text(
+          $.map(compexes, function(obj, i){
+            return compexes[i];
+          }).join(", ")
+        ).css("color", "blue");
+
+
+
+      });
+
+
+
+
 	</script>
 	
 </head>

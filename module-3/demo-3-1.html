@@ -6,16 +6,29 @@
 		<script src="../lib/jquery.js" type="text/javascript"></script>
 		<script>
 			$(function(){
+
+				$.fx.speeds._default = 1000;
+				$.fx.speeds.verySlow = 3000;
+				$.fx.speeds.veryFast = 100;
+
 				$('#toggle').click(function() {
 					if ($('#box').is(':visible')) {
-						$('#box').hide();
-					} else {
-						$('#box').show();
+						$('#box').slideUp().delay(333).slideDown(300);
 					}
+					//  else {
+					// 	//$.fx.speeds default
+					// 	$('#box').slideDown("veryFast");  // heigth					
+					// 	// $('#box').fadeIn();  // opacity
+					// }
 				});
-				/*$('#toggle').click(function() {
-					$('#box').toggle();
-				});*/
+
+
+				// $('#toggle').click(function() {
+				// 	// $('#box').slideToggle();
+				// 	$('#box').fadeToggle();					
+				// });
+
+
 			});
 		</script>
 		<style>
