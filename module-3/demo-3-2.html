@@ -9,9 +9,16 @@
 
 			// resize text
 			var content = $("div.content");
+
 			var winW = $(window).width() / 2 -
-			 content.outerWidth() / 5;
+			 content.outerWidth() / 2;
+
+			var winH = $(window).height() / 2 -
+				content.outerHeight() / 2;
+
 			$("button").on("click", function() {
+
+
 
 				// content.animate({
 				// 	"font-size": "+=2",
@@ -32,20 +39,27 @@
 				// );
 
 
-				// content
-				// 	.animate(
-				// 		{"font-size": "+=5"},
-				// 		{duration: 500}
-				// 	)
-				// 	.animate(
-				// 		{"top": "500"},
-				// 		{duration: 800, queue: false}	// paralele animation
-				// 	)
-
+				content
+					.animate(
+						{"font-size": "+=5"},
+						{duration: 500}
+					)
+					.animate(
+						{"top": "250"},
+						{duration: 2222, queue: false}	// if flase -> paralele animation
+					)
 
 				// console.log(winW);
-				content.css({"left": winW, "position": "absolute"});
-			
+				content.animate(
+					{"left": winW, "position": "absolute"}
+					);
+
+				content.animate(
+					{"top": winH}, 
+					{duration: 200, queue: false}
+				);
+
+				queue:true
 			
 			});
 
@@ -59,7 +73,7 @@
 			width: 400px;
 			background: grey;
 			padding: 2em;
-			position: relative
+			position: relative;
 		}
 	</style>
 </head>

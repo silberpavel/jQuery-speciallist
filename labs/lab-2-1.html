@@ -46,11 +46,14 @@
         function chancgeTableColor(eType, obj) {
           var bg = ""; var fw = "";
           if(eType == "mouseenter" ){
-            bg = "yellow";
+            bg = "pink";
             fw = "bold";
           }
           obj.css("background", bg)
-            .children().eq(3).css("font-weight", fw);
+            // .fadeOut(2000)
+            .children()
+            .eq(3)
+            .css("font-weight", fw);
         }
 
         tr.on("mouseenter mouseleave", function(e){
@@ -65,20 +68,72 @@
 		- Привязать событие "onclick" к элементу <h2>Ваш комментарий</h2>
 			для показать / спрятать форму
 	*/
-        // $("form#form").hide();
 
+        var comment = $("div#comment h2");
+        comment.css("display", "false");
+        var form = $("form#form");
+        form.css("display", "none");
+  
+        comment.on("click", function() {
+            form
+              // .toggle()
+              // .css("display", "false")
+              // .slideUp(1000)
+              .slideToggle(555);
+            comment
+            .attr("title", "Нажмите для заполнения данных")
+            ;
+        });
 
 
 	/**	
 		- Добавить в элемент <input type='text'> текст "Представьтесь"
 		- Добавить в элемент <textarea> текст "Ваш комментарий"
-		
+*/
+          var input = $("input[type='text']");
+          var txtArea = $("textarea");
+
+          input
+            // .append($("p"))
+            .val("Представьтесь");
+            txtArea
+              .val("Ваш комментарий");
+    
+	/*	
 		- При уходе с элементов <input type='text'> и <textarea>, если они остались не заполненными,
 			покрасить их красным (можно использовать класс "emptyField")
-		
+		*/
+          input.on("click", function(){
+            $(this).val("");
+          });
+          txtArea.on("click", function () {
+            $(this).val("");
+      });
+
+          input.on("mouseleave", function(){
+              console.log($(this), " before if");            
+            if($(this).val() == "") {
+              console.log($(this), " if first line");            
+
+              console.log($(this));
+
+              $(this)
+              
+                .val("Обезательное поле!")
+                .css("background", "red");
+            } else {
+              alert($(this).val());
+            }
+            
+              
+          });
+
+/*
 		- При нажатии кнопки "Отправить" или клавиши "Enter"(код 13) проверить, заполнены ли поля? 
 			При необходимости вывести alert('Заполните все поля!') 
-		
+	*/
+
+  /*	
 		- Разрешить ввод только символов [8, 9, 13, 16, 17, 32, 37, 39, 46, 65-122, 189]
 			При вводе недопустимого символа вывести alert('Недопустимый символ') и удалить этот символ
 	*/
@@ -180,7 +235,7 @@
       
       
       <div id="comment">
-        <h2>Ваш комментарий</h2>
+        <h2>Ваш комментарий (click here to open comment form)</h2>
         <form id="form" onsubmit="return false">
 			Имя:<br />
 			<input type="text" /><br/>
