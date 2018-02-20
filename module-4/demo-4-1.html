@@ -4,9 +4,29 @@
 	<meta charset=utf-8>
 	<title>Слайд-шоу</title>
 	<style>
+		body{ width: 400px; margin: 100px auto 0;}
 	</style>
 </head>
 <body>
+	<div id="view">
+		<ul>
+			<li>
+				<img src="img/red.gif" alt="" srcset=""></li>
+			<li>
+				<img src="img/green.gif" alt="" srcset="">
+			</li>
+			<li>
+				<img src="img/yellow.gif" alt="" srcset="">
+			</li>
+			<li>
+				<img src="img/blue.gif" alt="" srcset="">
+			</li>
+		</ul>
+	</div>
+	<div>
+		<button id="prev">Back</button>
+		<button id="next">Forward</button>		
+	</div>
 
 <script src="../lib/jquery.js" type="text/javascript"></script>
 <script src="slide-show.js"></script>
